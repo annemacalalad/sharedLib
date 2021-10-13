@@ -8,7 +8,7 @@ def call() {
         stages {
              stage('Upload Templates') {                  
                 steps { 
-                   uploadTemplateS3(s3Bucket: "filesbucket-anne")
+                   uploadTemplate_S3(s3Bucket: "filesbucket-anne")
                 }
             } 
             stage('Create Bucket') {                  
@@ -23,17 +23,17 @@ def call() {
             }
             /*stage('Upload Sample File to S3') {                  
                 steps {
-                    uploadCertainFileS3(s3Bucket:"filesbucket-anne", sampleFile: "sampleFile.txt")
+                    uploadSampleFileS3(s3Bucket:"filesbucket-anne", sampleFile: "sampleFile.txt")
                 }
             }*/
             stage('Delete a file from S3 bucket') {                  
                 steps {
-                    deleteFileS3(s3Bucket: "filesbucket-anne", pathName: "Hey.txt")
+                    deleteFileFromS3(s3Bucket: "filesbucket-anne", pathName: "Hey.txt")
                 }
             }
             stage('Deploy EC2') {                  
                 steps {
-                    deployToEC2(stackName: "EC2Jenkins-Anne", s3Bucket: "filesbucket-anne")
+                    ec2Deploy(stackName: "EC2Jenkins-Anne", s3Bucket: "filesbucket-anne")
                 }
             }
         }
