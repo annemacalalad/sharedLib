@@ -2,7 +2,7 @@ def call(Map stageParams = [:]) {
     withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {       
         s3Upload( 
             bucket: stageParams.s3Bucket,
-            file: "${stageParams.certainFile}"                       
+            file: "${stageParams.sampleFile}"                       
         )
     }
 }
