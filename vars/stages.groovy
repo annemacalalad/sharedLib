@@ -11,11 +11,11 @@ def call() {
                    uploadTemplates_s3(s3Bucket: "filesbucket-anne")
                 }
             } 
-            stage('Create Bucket') {                  
+            /*stage('Create Bucket') {                  
                 steps {
                     createBucket()
                 }
-            }
+            }*/
             stage('Upload Files to S3') {                  
                 steps {
                     uploadAllFileS3(s3Bucket:"filesbucket-anne")
