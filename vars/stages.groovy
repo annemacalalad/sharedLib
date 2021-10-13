@@ -9,7 +9,7 @@ def call() {
         stages {
              stage('Upload Templates') {                  
                 steps { 
-                   uploadTemplates_s3(s3Bucket: "$s3Bucket")
+                   uploadTemplates_s3(s3Bucket: "${s3Bucket}")
                 }
             } 
             /*stage('Create Bucket') {                  
