@@ -8,7 +8,7 @@ def call() {
         stages {
              stage('Upload Templates') {                  
                 steps { 
-                   uploadTemplate_S3(s3Bucket: "filesbucket-anne")
+                   uploadTemplates_S3(s3Bucket: "filesbucket-anne")
                 }
             } 
             stage('Create Bucket') {                  
