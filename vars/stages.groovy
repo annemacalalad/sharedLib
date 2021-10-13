@@ -34,7 +34,7 @@ def call() {
 //             }
             stage('Deploy EC2') {                  
                 steps {
-                    ec2Deploy(stackName: "EC2Jenkins-Anne", s3Bucket: "${s3Bucket}")
+                    ec2Deploy(stackName: "EC2-Anne", s3Bucket: "${s3Bucket}")
                 }
             }
         }
