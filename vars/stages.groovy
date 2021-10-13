@@ -27,11 +27,11 @@ def call() {
                     uploadSampleFileS3(s3Bucket:"${s3Bucket}", sampleFile: "sampleFile.txt")
                 }
             }*/
-            stage('Delete a file from S3 bucket') {                  
-                steps {
-                    deleteFileFromS3(s3Bucket: "${s3Bucket}", pathName: "Hey.txt")
-                }
-            }
+//             stage('Delete a file from S3 bucket') {                  
+//                 steps {
+//                     deleteFileFromS3(s3Bucket: "${s3Bucket}", pathName: "Hey.txt")
+//                 }
+//             }
             stage('Deploy EC2') {                  
                 steps {
                     ec2Deploy(stackName: "EC2Jenkins-Anne", s3Bucket: "${s3Bucket}")
