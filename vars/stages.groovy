@@ -4,11 +4,12 @@ def call() {
         environment {
             AWS_CRED = 'cloud_user'
             AWS_REGION = 'us-east-1'
+            s3Bucket = 'filesbucket-anne'
         }
         stages {
              stage('Upload Templates') {                  
                 steps { 
-                   uploadTemplates_s3(s3Bucket: "filesbucket-anne")
+                   uploadTemplates_s3(s3Bucket: "$s3Bucket")
                 }
             } 
             /*stage('Create Bucket') {                  
